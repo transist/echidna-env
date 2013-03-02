@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'pathname'
+
 path = File.expand_path('.')
 path = path.sub('\/bin$', '')
 
