@@ -3,10 +3,10 @@ require 'hiredis'
 require 'redis'
 require 'redis-namespace'
 
-redis_host = ENV['ECHIDNA_REDIS_HOST'] || "127.0.0.1"
-redis_port = ENV['ECHIDNA_REDIS_PORT'] || "6379"
-redis_namespace = "e:#{ENV['USER']}:#{ENV['ECHIDNA_ENV'][0]}"
+ENV['ECHIDNA_REDIS_HOST'] ||= "127.0.0.1"
+ENV['ECHIDNA_REDIS_PORT'] ||= "6379"
+ENV['ECHIDNA_REDIS_NAMESPACE'] = "e:#{ENV['USER']}:#{ENV['ECHIDNA_ENV'][0]}"
 
-$redis = Redis::Namespace.new(redis_namespace, redis: Redis.new(host: redis_host, port: redis_port, driver: "hiredis"))
+$redis = Redis::Namespace.new(ENV['ECHIDNA_REDIS_NAMESPACE'], redis: Redis.new(host: ENV['ECHIDNA_REDIS_HOST'], port: ENV['ECHIDNA_REDIS_PORT'], driver: "hiredis"))
 
-$logger.notice("connect to redis: #{redis_host}:#{redis_port}/#{redis_namespace}")
+$logger.notice("connect to redis: #{ENV['ECHIDNA_REDIS_HOST']}:#{ENV['ECHIDNA_REDIS_PORT']}/#{ENV['ECHIDNA_REDIS_NAMESPACE']}")
