@@ -1,5 +1,5 @@
 # coding: utf-8
-require_relative 'echidna/path'
-require_relative 'echidna/logger'
-require_relative 'echidna/redis'
-require_relative 'echidna/dependency'
+require_relative 'path'
+require_relative 'logger'
+require_relative 'redis'
+require_relative 'dependency'
