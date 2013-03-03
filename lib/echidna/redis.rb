@@ -3,6 +3,7 @@ require 'hiredis'
 require 'redis'
 require 'redis-namespace'
 
+ENV['ECHIDNA_ENV'] ||= "development"
 ENV['ECHIDNA_REDIS_HOST'] ||= "127.0.0.1"
 ENV['ECHIDNA_REDIS_PORT'] ||= "6379"
 ENV['ECHIDNA_REDIS_NAMESPACE'] = "e:#{ENV['USER']}:#{ENV['ECHIDNA_ENV'][0]}"
