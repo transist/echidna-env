@@ -18,7 +18,8 @@ BASE_PORT = {
   'deploy' => 62800
 };
 
-user = ENV['USER']
-offset = USERS_OFFSET[user] || USERS_OFFSET['development'];
-
-ENV["ECHIDNA_#{$app_name.upcase}_PORT"] = (BASE_PORT[$app_name] + offset).to_s
+def app_port(app_name=$app_name)
+  user = ENV['USER']
+  offset = USERS_OFFSET[user] || USERS_OFFSET['development'];
+  ENV["ECHIDNA_#{app_name.upcase}_PORT"] = (BASE_PORT[app_name] + offset).to_s
+end
