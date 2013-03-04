@@ -1,12 +1,12 @@
 USERS_OFFSET = {
-  echidna: 0, // production
-  staging: 1,
-  testing: 2,
-  development: 3,
-  rngadam: 4,
-  flyerhzm: 5,
-  rainux: 6,
-  simsicon: 7
+  'echidna' => 0,
+  'staging' => 1,
+  'testing' => 2,
+  'development' => 3,
+  'rngadam' => 4,
+  'flyerhzm' => 5,
+  'rainux' => 6,
+  'simsicon' => 7
 }
 
 BASE_PORT = {
@@ -21,4 +21,4 @@ BASE_PORT = {
 user = ENV['USER']
 offset = USERS_OFFSET[user] || USERS_OFFSET['development'];
 
-ENV["ECHIDNA_#{$app_name.upcase}_PORT"] = BASE_PORT[$app_name] + offset;
+ENV["ECHIDNA_#{$app_name.upcase}_PORT"] = (BASE_PORT[$app_name] + offset).to_s
