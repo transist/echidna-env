@@ -2,7 +2,7 @@
 require File.expand_path("../lib/echidna/version", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "echidna-ruby"
+  s.name        = "echidna-env"
   s.version     = Echidna::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Richard Huang"]
